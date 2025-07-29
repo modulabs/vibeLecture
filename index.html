@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI 시대의 개발 패러다임 전환</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700;900&display=swap');
+
+        :root {
+            --bg-color: #1a1a1d;
+            --text-color: #e5e5e5;
+            --primary-color: #4d8aff;
+            --secondary-color: #b3b3b3;
+            --card-bg-color: #2c2c31;
+            --logo-bg-color: #f0f0f0; /* 로고 배경색 추가 */
+        }
+
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            font-family: 'Noto Sans KR', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            overflow: hidden;
+        }
+
+        .slides-container {
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+
+        .slide {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 5vw;
+            box-sizing: border-box;
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.6s ease-in-out, transform 0.6s ease-in-out;
+            transform: scale(0.95);
+        }
+
+        .slide.active {
+            opacity: 1;
+            visibility: visible;
+            transform: scale(1);
+        }
+        
+        .slide-content {
+            text-align: center;
+            max-width: 900px;
+        }
+
+        h1, h2 {
+            font-weight: 900;
+            color: var(--text-color);
+            margin: 0 0 1rem 0;
+        }
+        
+        h1 { font-size: 3.5rem; }
+        h2 { font-size: 2.8rem; color: var(--primary-color); }
+        h3 { font-size: 1.5rem; font-weight: 300; color: var(--secondary-color); margin-bottom: 2rem; line-height: 1.6; }
+        
+        p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            font-weight: 400;
+        }
+
+        strong {
+            color: var(--primary-color);
+            font-weight: 700;
+        }
+        
+        .slide-number {
+            position: absolute;
+            bottom: 20px;
+            right: 30px;
+            font-size: 1rem;
+            color: var(--secondary-color);
+            opacity: 0.5;
+        }
+        
+        .role-container {
+            display: flex;
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .role-box {
+            background-color: var(--card-bg-color);
+            padding: 2rem;
+            border-radius: 12px;
+            flex: 1;
+            border-left: 5px solid var(--primary-color);
+        }
+        .role-box h4 {
+            font-size: 1.5rem;
+            margin-top: 0;
+        }
+        .role-box p {
+            font-size: 1.1rem;
+            text-align: left;
+        }
+
+        .env-container {
+            display: flex;
+            justify-content: center;
+            align-items: stretch;
+            gap: 3rem;
+            width: 100%;
+        }
+
+        .env-box {
+            background-color: var(--card-bg-color);
+            border-radius: 12px;
+            padding: 2rem 3rem;
+            flex: 1;
+            max-width: 400px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* --- 로고 이미지 스타일 수정 --- */
+        .img-wrapper {
+            background-color: var(--logo-bg-color);
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 2rem;
+            padding: 1.2rem;
+            box-sizing: border-box;
+        }
+
+        .env-box img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+        /* --- 로고 이미지 스타일 수정 끝 --- */
+
+        .env-box h4 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            margin-top: 0;
+        }
+        .env-box p {
+            font-size: 1rem;
+            color: var(--secondary-color);
+        }
+        a {
+            display: inline-block;
+            margin-top: 1.5rem;
+            padding: 0.8rem 1.5rem;
+            background-color: var(--primary-color);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 700;
+            transition: transform 0.2s;
+        }
+        a:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="slides-container">
+
+        <!-- Slide 1 -->
+        <section class="slide active">
+            <div class="slide-content">
+                <h2>1. 과거의 AI 개발: '코더'였습니다</h2>
+                <h3>이전 시대의 개발은 <strong>'손으로 모든 것을 구축'</strong>하는 과정이었습니다.</h3>
+                <p>
+                    아이디어를 코드로 한 줄 한 줄 직접 번역하고, 수많은 코드 속에서 작은 오류 하나를 찾기 위해 밤을 새웠습니다. 라이브러리 설치, 버전 충돌 해결 등 비본질적인 작업에 많은 노력을 기울였습니다.<br><br>
+                    이 방식은 AI라는 강력한 엔진을 가지고, <strong>삽으로 길을 닦는 것</strong>과 같았습니다.
+                </p>
+            </div>
+            <div class="slide-number">1 / 5</div>
+        </section>
+
+        <!-- Slide 2 -->
+        <section class="slide">
+            <div class="slide-content">
+                <h2>2. 새로운 시대: AI 개발도 AI로 합니다</h2>
+                <h3>이제 개발의 본질은 '코딩'이 아닌 <strong>'창조'</strong>가 되어야 합니다.</h3>
+                <p>
+                    AI는 단순한 도구가 아닌, 우리의 <strong>'코딩 동료(Co-pilot)'</strong>입니다.<br>
+                    우리의 역할은 "코드를 짜는 사람"에서 <strong>"AI에게 코드를 짜도록 지시하는 사람"</strong>으로 바뀌어야 합니다.<br><br>
+                    우리가 방금 <strong>Gemma 3</strong> 챗봇을 만든 과정이 바로 그 증거입니다.
+                </p>
+            </div>
+            <div class="slide-number">2 / 5</div>
+        </section>
+
+        <!-- Slide 3 -->
+        <section class="slide">
+            <div class="slide-content">
+                <h2>3. 우리의 새로운 역할: '개념'을 제시하는 설계자</h2>
+                <h3>이제 개발자는 <strong>'건축가'</strong>가 되어야 합니다.</h3>
+                <div class="role-container">
+                    <div class="role-box">
+                        <h4>우리 (사람)</h4>
+                        <p>"Ollama로 <strong>Gemma 3</strong> 모델을 실행하고, Streamlit으로 웹 UI를 만들어줘. 사용자와 진짜 대화하는 것처럼 보여야 해." 와 같이 <strong>명확한 요구사항과 개념을 제시</strong>합니다.</p>
+                    </div>
+                    <div class="role-box">
+                        <h4>AI (코딩 동료)</h4>
+                        <p>그 요구사항을 듣고, 필요한 라이브러리를 찾고, 수백 줄의 코드를 <strong>순식간에 생성</strong>합니다. 오류가 발생하면, 원인과 해결책까지 제시합니다.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="slide-number">3 / 5</div>
+        </section>
+
+        <!-- Slide 4 -->
+        <section class="slide">
+            <div class="slide-content">
+                <h2>4. 전제 조건: AI가 일할 '판' 깔아주기</h2>
+                <h3>AI 코딩 동료가 마음껏 실력을 발휘하려면, <strong>최소한의 작업 환경</strong>이 필요합니다.</h3>
+                <p>
+                    AI가 코드를 생성하고 실행하기 위해서는, 그 코드가 작동될 기본적인 '언어'와 '도구'들이 설치되어 있어야 합니다.<br><br>
+                    우리가 할 일은, AI가 일할 수 있는 환경을 <strong>딱 한 번만 제대로 구성</strong>해주는 것입니다. 이것이 우리의 새로운 '설정' 작업이며, 가장 중요한 첫걸음입니다.
+                </p>
+            </div>
+            <div class="slide-number">4 / 5</div>
+        </section>
+
+        <!-- Slide 5 -->
+        <section class="slide">
+            <div class="slide-content">
+                <h2>5. AI 코딩 환경 설정: 딱 두 가지만!</h2>
+                <h3>최고의 목수에게 작업대를 마련해주듯, 우리 AI에게도 최고의 도구를 준비해줍시다.</h3>
+                <div class="env-container">
+                    <div class="env-box">
+                        <div class="img-wrapper">
+                            <img src="https://www.python.org/static/community_logos/python-logo-master-v3-TM.png" alt="Python 로고">
+                        </div>
+                        <h4>Python</h4>
+                        <p>AI와 데이터 과학의 표준 언어. LangChain, Streamlit 등 핵심 라이브러리들의 기반입니다.</p>
+                        <a href="https://www.python.org/downloads/" target="_blank">다운로드</a>
+                    </div>
+                    <div class="env-box">
+                        <div class="img-wrapper">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/d/d9/Node.js_logo.svg" alt="Node.js 로고">
+                        </div>
+                        <h4>Node.js</h4>
+                        <p>localtunnel처럼 웹과 관련된 유용한 도구들을 설치하고 사용하는 데 필요합니다. (npm 포함)</p>
+                        <a href="https://nodejs.org/" target="_blank">다운로드</a>
+                    </div>
+                </div>
+            </div>
+            <div class="slide-number">5 / 5</div>
+        </section>
+
+    </div>
+
+    <script>
+        const slides = document.querySelectorAll('.slide');
+        let currentSlide = 0;
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.classList.remove('active');
+                if (i === index) {
+                    slide.classList.add('active');
+                }
+            });
+        }
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight') {
+                currentSlide = (currentSlide + 1) % slides.length;
+            } else if (e.key === 'ArrowLeft') {
+                currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+            }
+            showSlide(currentSlide);
+        });
+
+        showSlide(currentSlide);
+    </script>
+
+</body>
+</html>
